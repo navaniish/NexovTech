@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, ChevronRight, Zap } from 'lucide-react';
+import { ArrowRight, ChevronRight, Crown, Sparkles } from 'lucide-react';
 
 interface HeroSectionProps {
   onExploreClick: () => void;
@@ -28,10 +28,15 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onExploreClick, onProj
       {/* Content */}
       <div className="relative z-10 max-w-5xl mx-auto text-center flex flex-col items-center pt-16 sm:pt-24">
 
-        {/* Badge */}
-        <div className="badge mb-5 sm:mb-6 animate-in fade-in slide-in-from-bottom-4 duration-500 text-[10px] sm:text-xs">
-          <Zap className="w-3 h-3" />
-          SOFTWARE ENGINEERING &amp; AI STUDIO
+        {/* Royal Crest Badge */}
+        <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-gradient-to-r from-amber-500/10 via-indigo-500/10 to-purple-500/10 border border-amber-400/40 shadow-lg shadow-indigo-500/10 backdrop-blur-md mb-6 animate-in fade-in slide-in-from-bottom-4 duration-500 group hover:border-amber-400/80 transition-all">
+          <div className="w-5 h-5 rounded-full bg-gradient-to-br from-amber-400 via-indigo-600 to-purple-600 p-0.5 shadow-sm flex items-center justify-center shrink-0">
+            <Crown className="w-3 h-3 text-white" />
+          </div>
+          <span className="text-[10px] sm:text-xs font-mono font-bold tracking-[0.18em] uppercase text-slate-900">
+            SOFTWARE ENGINEERING <span className="text-amber-600 font-extrabold">&amp;</span> AI STUDIO
+          </span>
+          <Sparkles className="w-3.5 h-3.5 text-amber-500 animate-pulse" />
         </div>
 
         {/* Headline */}
