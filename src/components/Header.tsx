@@ -85,13 +85,15 @@ export const Header: React.FC<HeaderProps> = ({ activeSection, onNavigate }) => 
 
           {/* CTA & Mobile Toggle */}
           <div className="flex items-center gap-2 sm:gap-3">
-            <button
-              onClick={() => click('contact')}
-              className="hidden sm:flex btn-primary !py-2 !px-4 !text-xs shrink-0"
-            >
-              <span>WORK WITH US</span>
-              <ArrowUpRight className="w-3.5 h-3.5" />
-            </button>
+            <div className="hidden md:block">
+              <button
+                onClick={() => click('contact')}
+                className="btn-primary !py-2 !px-4 !text-xs shrink-0"
+              >
+                <span>WORK WITH US</span>
+                <ArrowUpRight className="w-3.5 h-3.5" />
+              </button>
+            </div>
 
             {/* Mobile Menu Toggle Button */}
             <button
