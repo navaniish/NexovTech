@@ -194,7 +194,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => (
       <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs font-mono" style={{ color: '#94a3b8' }}>
         <div>© {new Date().getFullYear()} NexovTech. All rights reserved.</div>
         <div className="flex items-center gap-3">
-          <span style={{ color: '#4f46e5', fontWeight: 600 }}>Building Software That Moves Ideas Forward.</span>
+          <span style={{ color: '#4f46e5', fontWeight: 600 }}>Turning Complex Challenges Into Scalable Digital Products.</span>
           <span>·</span>
           <span>NexovTech Studio</span>
         </div>

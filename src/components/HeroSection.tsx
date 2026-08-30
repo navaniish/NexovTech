@@ -43,9 +43,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onExploreClick, onProj
           className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold font-heading tracking-tight leading-[1.08] mb-5 sm:mb-7 px-2 animate-in fade-in slide-in-from-bottom-4 duration-500 delay-100"
           style={{ color: '#0f172a' }}
         >
-          Building Software That
+          Turn Complex Challenges Into
           <br />
-          <span className="text-gradient">Moves Ideas Forward.</span>
+          <span className="text-gradient">Scalable Digital Products.</span>
         </h1>
 
         {/* Subheading */}
