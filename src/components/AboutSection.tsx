@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { COMPANY_VALUES, TIMELINE_DATA } from '../data/portfolioData';
 import {
   ShieldCheck, Compass, Code2, Feather, Target, Lightbulb,
-  Users, Globe, Zap, ArrowRight, CheckCircle2
+  Users, Globe, Zap, ArrowRight, CheckCircle2, Quote, Mail, Cpu
 } from 'lucide-react';
 
 /* Value colour + icon identity */
@@ -123,6 +123,103 @@ export const AboutSection: React.FC = () => {
                 <div className="text-[11px] sm:text-xs" style={{ color: '#64748b' }}>{s.label}</div>
               </div>
             ))}
+          </div>
+        </div>
+      </div>
+
+      {/* ── Founder Spotlight Card ───────────────────────── */}
+      <div
+        className="rounded-3xl p-6 sm:p-10 md:p-12 mb-12 sm:mb-16 relative overflow-hidden"
+        style={{
+          background: '#ffffff',
+          border: '1px solid #e2e8f0',
+          boxShadow: '0 8px 32px rgba(79,70,229,0.06)',
+        }}
+      >
+        {/* Top accent */}
+        <div
+          className="absolute top-0 left-0 right-0 h-1 rounded-t-3xl"
+          style={{ background: 'linear-gradient(90deg, #4f46e5, #0ea5e9, #7c3aed)' }}
+        />
+
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+
+          {/* Left: Founder Avatar / Logo Crest — 4 cols */}
+          <div className="lg:col-span-4 flex flex-col items-center text-center">
+            <div className="relative w-28 h-28 sm:w-36 sm:h-36 rounded-3xl p-1 bg-gradient-to-br from-indigo-500 via-violet-500 to-teal-400 shadow-xl shadow-indigo-500/20 mb-5">
+              <div className="w-full h-full rounded-[22px] overflow-hidden bg-slate-900 flex items-center justify-center p-2">
+                <img src="/logo.jpeg" alt="Founder Logo" className="w-full h-full object-cover rounded-xl" />
+              </div>
+              <div className="absolute -bottom-2 -right-2 px-3 py-1 bg-indigo-600 text-white rounded-full text-[10px] font-mono font-bold shadow-md">
+                FOUNDER &amp; CTO
+              </div>
+            </div>
+
+            <h3 className="text-xl sm:text-2xl font-bold font-heading text-slate-900 mb-1">
+              Navaneeswar Daggupati
+            </h3>
+            <p className="text-xs font-mono text-indigo-600 font-semibold mb-4">
+              Founder &amp; Lead Systems Architect
+            </p>
+
+            {/* Social Links */}
+            <div className="flex items-center gap-2">
+              <a
+                href="https://github.com/navaniish"
+                target="_blank"
+                rel="noreferrer"
+                className="w-9 h-9 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-center text-slate-600 hover:text-indigo-600 hover:border-indigo-200 transition-colors"
+                title="GitHub Profile"
+              >
+                <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                  <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                </svg>
+              </a>
+              <a
+                href="mailto:contact@nexovtech.com"
+                className="w-9 h-9 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-center text-slate-600 hover:text-indigo-600 hover:border-indigo-200 transition-colors"
+                title="Email Founder"
+              >
+                <Mail className="w-4 h-4" />
+              </a>
+            </div>
+          </div>
+
+          {/* Right: Founder Bio & Philosophy — 8 cols */}
+          <div className="lg:col-span-8 space-y-6">
+            <div>
+              <span className="badge mb-3 inline-block">ENGINEERING LEADERSHIP</span>
+              <h4 className="text-xl sm:text-3xl font-bold font-heading text-slate-900 mb-3">
+                Crafting Enduring Systems with Human Precision.
+              </h4>
+              <p className="text-xs sm:text-base text-slate-600 leading-relaxed font-body">
+                Navaneeswar founded NexovTech with a clear conviction: modern software should be fast, reliable, and fundamentally humanized. With hands-on expertise in full-stack architecture, machine learning integration, and cloud infrastructure, he oversees engineering execution across every client engagement.
+              </p>
+            </div>
+
+            {/* Founder Quote */}
+            <div className="p-5 rounded-2xl bg-indigo-50/60 border border-indigo-100 relative">
+              <Quote className="w-8 h-8 text-indigo-300 absolute top-3 right-4 opacity-50 pointer-events-none" />
+              <p className="text-xs sm:text-sm font-medium italic text-slate-800 leading-relaxed mb-2">
+                "We don't believe in generic templates or artificial bloat. Every line of code, database schema, and interface layout is built with intention, speed, and real-world durability."
+              </p>
+              <div className="text-[11px] font-mono font-bold text-indigo-700">— Navaneeswar D.</div>
+            </div>
+
+            {/* Core Competencies */}
+            <div>
+              <div className="text-[10px] font-mono font-bold text-slate-400 uppercase tracking-widest mb-3 flex items-center gap-2">
+                <Cpu className="w-3.5 h-3.5 text-indigo-600" />
+                <span>LEADERSHIP TECHNICAL FOCUS</span>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {['Full-Stack Architecture', 'LLM Agents & RAG', 'Cloud & Kubernetes', '3D WebGL Systems', 'Performance Engineering'].map((focus, i) => (
+                  <span key={i} className="px-3 py-1.5 rounded-xl bg-slate-50 border border-slate-200 text-xs font-mono font-semibold text-slate-700">
+                    {focus}
+                  </span>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </div>
