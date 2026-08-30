@@ -18,11 +18,12 @@ export const Header: React.FC<HeaderProps> = ({ activeSection, onNavigate }) => 
 
   const navLinks = [
     { id: 'hero',         label: 'Home' },
+    { id: 'about',        label: 'About' },
     { id: 'capabilities', label: 'What We Build' },
     { id: 'projects',     label: 'Projects' },
+    { id: 'services',     label: 'Services' },
     { id: 'technology',   label: 'Technology' },
     { id: 'labs',         label: 'Labs' },
-    { id: 'about',        label: 'About' },
   ];
 
   const click = (id: string) => { onNavigate(id); setMobileOpen(false); };

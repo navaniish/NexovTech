@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react';
 import { Header } from './components/Header';
 import { HeroSection } from './components/HeroSection';
+import { AboutSection } from './components/AboutSection';
 import { CapabilitiesSection } from './components/CapabilitiesSection';
 import { EcosystemSection } from './components/EcosystemSection';
 import { ProjectsSection } from './components/ProjectsSection';
 import { ServicesSection } from './components/ServicesSection';
 import { TechnologySection } from './components/TechnologySection';
 import { LabsSection } from './components/LabsSection';
-import { AboutSection } from './components/AboutSection';
 import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
 import { PeacockBackground } from './components/PeacockBackground';
@@ -16,7 +16,7 @@ export function App() {
   const [activeSection, setActiveSection] = useState('hero');
 
   useEffect(() => {
-    const sections = ['hero','capabilities','ecosystem','projects','services','technology','labs','about','contact'];
+    const sections = ['hero', 'about', 'capabilities', 'ecosystem', 'projects', 'services', 'technology', 'labs', 'contact'];
     const handleScroll = () => {
       const scrollPos = window.scrollY + 180;
       for (const id of sections) {
@@ -47,9 +47,11 @@ export function App() {
         <Header activeSection={activeSection} onNavigate={scrollToSection} />
         <main>
           <HeroSection
-            onExploreClick={() => scrollToSection('capabilities')}
+            onExploreClick={() => scrollToSection('about')}
             onProjectsClick={() => scrollToSection('projects')}
           />
+          <div className="section-divider my-2" />
+          <AboutSection />
           <div className="section-divider my-2" />
           <CapabilitiesSection />
           <div className="section-divider my-2" />
@@ -62,8 +64,6 @@ export function App() {
           <TechnologySection />
           <div className="section-divider my-2" />
           <LabsSection />
-          <div className="section-divider my-2" />
-          <AboutSection />
           <div className="section-divider my-2" />
           <ContactSection />
         </main>

@@ -7,12 +7,12 @@ interface FooterProps {
 
 const NAV_LINKS = [
   { id: 'hero',         label: 'Home' },
+  { id: 'about',        label: 'About' },
   { id: 'capabilities', label: 'What We Build' },
   { id: 'projects',     label: 'Projects' },
   { id: 'services',     label: 'Services' },
   { id: 'technology',   label: 'Technology' },
   { id: 'labs',         label: 'Labs' },
-  { id: 'about',        label: 'About' },
   { id: 'contact',      label: 'Contact' },
 ];
 
