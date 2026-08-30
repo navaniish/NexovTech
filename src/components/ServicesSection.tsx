@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { SERVICES_DATA } from '../data/portfolioData';
+import type { ServiceCategory } from '../types/portfolio';
+import { ServiceModal } from './ServiceModal';
 import {
   Rocket, Globe, BrainCircuit, CloudLightning, Workflow, Palette,
   CheckCircle2, ArrowRight
@@ -33,6 +35,12 @@ const iconMap: Record<string, { icon: React.ReactElement<{ className?: string }>
 };
 
 export const ServicesSection: React.FC = () => {
+  const [selectedService, setSelectedService] = useState<ServiceCategory | null>(null);
+
+  const scrollToContact = () => {
+    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <section id="services" className="py-16 sm:py-24 px-4 sm:px-6 md:px-8 max-w-7xl mx-auto">
 
@@ -58,7 +66,8 @@ export const ServicesSection: React.FC = () => {
         return (
           <div
             key={service.id}
-            className="relative mb-6 rounded-3xl overflow-hidden"
+            onClick={() => setSelectedService(service)}
+            className="relative mb-6 rounded-3xl overflow-hidden cursor-pointer group transition-all duration-300 hover:shadow-2xl"
             style={{
               background: 'linear-gradient(135deg, #f0f4ff 0%, #f5f3ff 60%, #ede9fe 100%)',
               border: '1px solid rgba(79,70,229,0.15)',
@@ -82,7 +91,7 @@ export const ServicesSection: React.FC = () => {
                 </div>
                 <span className="section-label block mb-2">FLAGSHIP SERVICE</span>
                 <h3
-                  className="text-xl sm:text-2xl md:text-3xl font-bold font-heading mb-3 sm:mb-4"
+                  className="text-xl sm:text-2xl md:text-3xl font-bold font-heading mb-3 sm:mb-4 group-hover:text-indigo-600 transition-colors"
                   style={{ color: '#0f172a' }}
                 >
                   {service.title}
@@ -90,18 +99,20 @@ export const ServicesSection: React.FC = () => {
                 <p className="text-xs sm:text-base leading-relaxed mb-6" style={{ color: '#475569' }}>
                   {service.description}
                 </p>
-                <button
-                  className="btn-primary !text-xs w-full sm:w-auto justify-center"
-                  onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                >
-                  Start a Project <ArrowRight className="w-3.5 h-3.5" />
-                </button>
+                <div className="flex items-center gap-3">
+                  <button
+                    className="btn-primary !text-xs w-full sm:w-auto justify-center"
+                    onClick={(e) => { e.stopPropagation(); setSelectedService(service); }}
+                  >
+                    Learn More &amp; Scope Project <ArrowRight className="w-3.5 h-3.5" />
+                  </button>
+                </div>
               </div>
 
               {/* Right — capabilities */}
               <div
                 className="rounded-2xl p-5 sm:p-6"
-                style={{ background: 'rgba(255,255,255,0.7)', border: '1px solid rgba(79,70,229,0.1)' }}
+                style={{ background: 'rgba(255,255,255,0.75)', border: '1px solid rgba(79,70,229,0.1)' }}
               >
                 <p className="text-xs font-mono font-semibold tracking-widest uppercase mb-4" style={{ color: '#94a3b8' }}>
                   WHAT'S INCLUDED
@@ -132,7 +143,8 @@ export const ServicesSection: React.FC = () => {
           return (
             <div
               key={service.id}
-              className="card-surface group p-6 sm:p-7 flex flex-col justify-between"
+              onClick={() => setSelectedService(service)}
+              className="card-surface group p-6 sm:p-7 flex flex-col justify-between cursor-pointer"
             >
               {/* Top row: icon + index */}
               <div>
@@ -187,12 +199,14 @@ export const ServicesSection: React.FC = () => {
                   ))}
                 </div>
 
-                {/* Learn more */}
-                <div
-                  className="flex items-center gap-1.5 text-[10px] font-mono font-bold tracking-widest uppercase group-hover:translate-x-1 group-hover:text-indigo-600 transition-all duration-200 text-slate-400"
+                {/* Learn more button */}
+                <button
+                  onClick={(e) => { e.stopPropagation(); setSelectedService(service); }}
+                  className="w-full py-2.5 px-3 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between text-[11px] font-mono font-bold tracking-wider uppercase group-hover:bg-indigo-600 group-hover:text-white group-hover:border-indigo-600 transition-all duration-200 text-slate-700"
                 >
-                  LEARN MORE <ArrowRight className="w-3 h-3" />
-                </div>
+                  <span>LEARN MORE</span>
+                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                </button>
               </div>
             </div>
           );
@@ -218,11 +232,18 @@ export const ServicesSection: React.FC = () => {
         </div>
         <button
           className="btn-primary shrink-0 w-full sm:w-auto justify-center"
-          onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+          onClick={scrollToContact}
         >
           Book a Free Discovery Call <ArrowRight className="w-4 h-4" />
         </button>
       </div>
+
+      {/* ── Service Detail Modal ───────────────────────── */}
+      <ServiceModal
+        service={selectedService}
+        onClose={() => setSelectedService(null)}
+        onContactClick={scrollToContact}
+      />
     </section>
   );
 };
