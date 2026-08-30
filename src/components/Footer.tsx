@@ -1,5 +1,5 @@
 import React from 'react';
-import { Mail, MapPin, Activity, Globe, Share2, Code2, ArrowUpRight } from 'lucide-react';
+import { Mail, MapPin, Activity, Globe, Share2, Code2, ArrowUpRight, Phone } from 'lucide-react';
 
 interface FooterProps {
   onNavigate: (sectionId: string) => void;
@@ -110,6 +110,16 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => (
             GET IN TOUCH
           </h4>
           <div className="space-y-4">
+            <a
+              href="tel:+917075708980"
+              className="flex items-center gap-2 text-sm font-mono font-semibold transition-colors"
+              style={{ color: '#64748b' }}
+              onMouseEnter={e => (e.currentTarget.style.color = '#4f46e5')}
+              onMouseLeave={e => (e.currentTarget.style.color = '#64748b')}
+            >
+              <Phone className="w-4 h-4 shrink-0" style={{ color: '#4f46e5' }} />
+              +91 7075708980
+            </a>
             <a
               href="mailto:contact@nexovtech.com"
               className="flex items-center gap-2 text-sm transition-colors"

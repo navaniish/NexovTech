@@ -55,11 +55,11 @@ export const NexovChatbot: React.FC = () => {
     if (q.includes('cost') || q.includes('price') || q.includes('budget') || q.includes('rate')) {
       return 'Project budgets range from <$25k for targeted builds up to $100k+ for full enterprise systems. Scroll to our Contact section below to request a tailored estimate!';
     }
-    if (q.includes('call') || q.includes('book') || q.includes('contact') || q.includes('hire') || q.includes('talk')) {
+    if (q.includes('phone') || q.includes('number') || q.includes('call') || q.includes('book') || q.includes('contact') || q.includes('hire') || q.includes('talk')) {
       setTimeout(() => {
         document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
       }, 500);
-      return 'I have highlighted our Contact form for you! You can submit your project vision directly below to book a free 30-minute discovery call with our engineering team.';
+      return 'You can reach us directly via Phone at +91 7075708980 or Email at contact@nexovtech.com! I have also highlighted our Contact form for you below.';
     }
     return `Thank you for asking about "${query}". NexovTech specializes in custom high-performance software and AI architectures. Would you like to schedule a free 30-minute consultation or discuss your technical stack?`;
   };

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import confetti from 'canvas-confetti';
-import { Send, CheckCircle2, MessageSquare } from 'lucide-react';
+import { Send, CheckCircle2, MessageSquare, Phone, Mail } from 'lucide-react';
 
 export const ContactSection: React.FC = () => {
   const [formState, setFormState] = useState({
@@ -53,9 +53,27 @@ export const ContactSection: React.FC = () => {
           <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold font-heading text-slate-900 mb-3 sm:mb-4">
             Have Something <span className="text-indigo-600">Worth Building?</span>
           </h2>
-          <p className="text-slate-600 text-sm sm:text-base">
+          <p className="text-slate-600 text-sm sm:text-base mb-6">
             Tell us about your project or idea. We’d love to explore how we can help you build it.
           </p>
+
+          {/* Quick Direct Contact Pills */}
+          <div className="flex flex-wrap items-center justify-center gap-3">
+            <a
+              href="tel:+917075708980"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-50 border border-slate-200 text-xs font-mono font-bold text-slate-800 hover:bg-indigo-600 hover:text-white hover:border-indigo-600 transition-colors"
+            >
+              <Phone className="w-3.5 h-3.5 text-indigo-600 group-hover:text-white shrink-0" />
+              <span>+91 7075708980</span>
+            </a>
+            <a
+              href="mailto:contact@nexovtech.com"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-50 border border-slate-200 text-xs font-mono font-bold text-slate-800 hover:bg-indigo-600 hover:text-white hover:border-indigo-600 transition-colors"
+            >
+              <Mail className="w-3.5 h-3.5 text-indigo-600 group-hover:text-white shrink-0" />
+              <span>contact@nexovtech.com</span>
+            </a>
+          </div>
         </div>
 
         {/* Form Submission Confirmation */}
