@@ -1,5 +1,5 @@
 import React from 'react';
-import { Cpu, Globe, BrainCircuit, CloudLightning, Database, Layers, ShieldCheck, Sparkles } from 'lucide-react';
+import { Cpu, Globe, BrainCircuit, CloudLightning, Database, Layers, ShieldCheck } from 'lucide-react';
 
 interface EcosystemModule {
   name: string;
@@ -213,7 +213,7 @@ export const NexovNeuralNetwork: React.FC = () => {
           style={{ background: '#f8fafc', border: '1px solid #f1f5f9' }}
         >
           <div className="flex items-center gap-2 text-xs font-mono text-slate-600">
-            <Sparkles className="w-4 h-4 text-indigo-600 shrink-0" />
+            <ShieldCheck className="w-4 h-4 text-indigo-600 shrink-0" />
             <span>All modules can be deployed standalone or interconnected via secure event streams and APIs.</span>
           </div>
           <button

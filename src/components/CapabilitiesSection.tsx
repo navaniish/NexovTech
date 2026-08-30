@@ -1,5 +1,5 @@
 import React from 'react';
-import { Cpu, Code, Cloud, Zap, Database, Sparkles, ArrowRight } from 'lucide-react';
+import { Cpu, Code, Cloud, Zap, Database, ArrowRight } from 'lucide-react';
 import { CAPABILITIES_DATA } from '../data/portfolioData';
 
 const iconMap: Record<string, React.ReactNode> = {
@@ -8,7 +8,7 @@ const iconMap: Record<string, React.ReactNode> = {
   Cloud:    <Cloud    className="w-6 h-6" style={{ color: '#0ea5e9' }} />,
   Zap:      <Zap      className="w-6 h-6" style={{ color: '#a855f7' }} />,
   Database: <Database className="w-6 h-6" style={{ color: '#06b6d4' }} />,
-  Sparkles: <Sparkles className="w-6 h-6" style={{ color: '#ec4899' }} />,
+  Sparkles: <Cpu      className="w-6 h-6" style={{ color: '#ec4899' }} />,
 };
 
 export const CapabilitiesSection: React.FC = () => (
@@ -33,7 +33,7 @@ export const CapabilitiesSection: React.FC = () => (
                 className="p-3 sm:p-3.5 rounded-xl"
                 style={{ background: 'rgba(79,70,229,0.07)', border: '1px solid rgba(79,70,229,0.12)' }}
               >
-                {iconMap[cap.icon] || <Sparkles className="w-6 h-6" style={{ color: '#4f46e5' }} />}
+                {iconMap[cap.icon] || <Cpu className="w-6 h-6" style={{ color: '#4f46e5' }} />}
               </div>
               <span className="text-[10px] font-mono font-bold" style={{ color: '#cbd5e1' }}>0{idx + 1}</span>
             </div>

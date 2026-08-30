@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { PROJECTS_DATA } from '../data/portfolioData';
 import type { ProjectItem } from '../types/portfolio';
 import { CaseStudyModal } from './CaseStudyModal';
-import { ArrowUpRight, Bot, Server, Activity, Glasses, Sparkles } from 'lucide-react';
+import { ArrowUpRight, Bot, Server, Activity, Glasses } from 'lucide-react';
 
 const iconMap: Record<string, React.ReactNode> = {
   Bot:      <Bot      className="w-6 h-6 sm:w-7 sm:h-7" style={{ color: '#4f46e5' }} />,
@@ -41,7 +41,7 @@ export const ProjectsSection: React.FC<Props> = ({ onContactClick }) => {
                   className="p-3 sm:p-3.5 rounded-2xl"
                   style={{ background: 'rgba(79,70,229,0.07)', border: '1px solid rgba(79,70,229,0.12)' }}
                 >
-                  {iconMap[project.iconName] || <Sparkles className="w-6 h-6 sm:w-7 sm:h-7" style={{ color: '#4f46e5' }} />}
+                  {iconMap[project.iconName] || <Bot className="w-6 h-6 sm:w-7 sm:h-7" style={{ color: '#4f46e5' }} />}
                 </div>
                 <span
                   className="text-[10px] sm:text-[11px] font-mono font-semibold px-2.5 sm:px-3 py-1 rounded-full"

@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, ChevronRight, Crown, Sparkles } from 'lucide-react';
+import { ArrowRight, ChevronRight, Crown } from 'lucide-react';
 
 interface HeroSectionProps {
   onExploreClick: () => void;
@@ -36,7 +36,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onExploreClick, onProj
           <span className="text-[10px] sm:text-xs font-mono font-bold tracking-[0.18em] uppercase text-slate-900">
             SOFTWARE ENGINEERING <span className="text-amber-600 font-extrabold">&amp;</span> AI STUDIO
           </span>
-          <Sparkles className="w-3.5 h-3.5 text-amber-500 animate-pulse" />
         </div>
 
         {/* Headline */}

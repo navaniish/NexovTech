@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import confetti from 'canvas-confetti';
-import { Send, CheckCircle2, Sparkles, MessageSquare } from 'lucide-react';
+import { Send, CheckCircle2, MessageSquare } from 'lucide-react';
 
 export const ContactSection: React.FC = () => {
   const [formState, setFormState] = useState({
@@ -186,7 +186,7 @@ export const ContactSection: React.FC = () => {
             >
               {isSubmitting ? (
                 <>
-                  <Sparkles className="w-4 h-4 animate-spin" />
+                  <Send className="w-4 h-4 animate-spin" />
                   <span>SENDING MESSAGE...</span>
                 </>
               ) : (

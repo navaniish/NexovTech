@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { X, Send, Sparkles } from 'lucide-react';
+import { X, Send, Bot } from 'lucide-react';
 
 interface Message {
   id: string;
@@ -112,7 +112,6 @@ export const NexovChatbot: React.FC = () => {
           <div className="text-left">
             <div className="flex items-center gap-1 text-xs font-bold font-heading text-slate-900">
               <span>NexovTech AI</span>
-              <Sparkles className="w-3 h-3 text-indigo-600" />
             </div>
             <div className="text-[10px] font-mono text-emerald-600 font-semibold">Online · Ask Anything</div>
           </div>
@@ -194,7 +193,7 @@ export const NexovChatbot: React.FC = () => {
                   <img src="/logo.jpeg" alt="AI" className="w-full h-full object-cover" />
                 </div>
                 <div className="bg-white border border-slate-200 rounded-2xl p-3 text-xs text-slate-400 flex items-center gap-1.5">
-                  <Sparkles className="w-3.5 h-3.5 text-indigo-600 animate-spin" />
+                  <Bot className="w-3.5 h-3.5 text-indigo-600 animate-pulse" />
                   <span>NexovTech AI is thinking...</span>
                 </div>
               </div>
