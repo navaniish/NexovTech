@@ -6,9 +6,12 @@
 
 @layer base {
   :root {
-    --font-heading: 'Plus Jakarta Sans', 'Space Grotesk', system-ui, -apple-system, sans-serif;
+    --font-heading: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-outfit:  'Outfit', system-ui, -apple-system, sans-serif;
+    --font-grotesk: 'Space Grotesk', system-ui, -apple-system, sans-serif;
     --font-body:    'Inter', system-ui, -apple-system, sans-serif;
     --font-mono:    'JetBrains Mono', 'Fira Code', monospace;
+    --font-serif:   'Playfair Display', Georgia, serif;
 
     /* Light Canvas */
     --bg-base:    #f8fafc;
@@ -71,10 +74,13 @@
   border-radius: 4px;
 }
 
-/* ── Typography ────────────────────────────────────────────── */
-.font-heading { font-family: var(--font-heading); }
-.font-body    { font-family: var(--font-body); }
-.font-mono    { font-family: var(--font-mono); }
+/* ── Typography Suite ───────────────────────────────────────── */
+.font-heading  { font-family: var(--font-heading); }
+.font-outfit   { font-family: var(--font-outfit); }
+.font-grotesk  { font-family: var(--font-grotesk); }
+.font-body     { font-family: var(--font-body); }
+.font-mono     { font-family: var(--font-mono); }
+.font-serif    { font-family: var(--font-serif); }
 
 .text-gradient {
   background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 60%, #a855f7 100%);
