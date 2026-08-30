@@ -94,13 +94,13 @@ export const NexovChatbot: React.FC = () => {
 
   return (
     <>
-      {/* ── Floating Launcher Trigger Button ──────────────────────────────── */}
+      {/* ── Compact Floating Launcher Trigger Button ──────────────────────── */}
       {!isOpen && (
         <button
           onClick={() => setIsOpen(true)}
-          className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-[6000] group flex items-center gap-2.5 p-1.5 pr-3.5 sm:pr-4 rounded-full bg-white border border-slate-200 shadow-2xl shadow-indigo-500/25 hover:scale-105 transition-all duration-300 focus:outline-none"
+          className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-[6000] group flex items-center gap-2 p-1.5 sm:pr-4 rounded-full bg-white border border-slate-200 shadow-xl shadow-indigo-500/20 hover:scale-105 transition-all duration-300 focus:outline-none"
         >
-          {/* Logo Frame */}
+          {/* Logo Circle Frame */}
           <div className="relative w-10 h-10 sm:w-11 sm:h-11 rounded-full p-0.5 bg-gradient-to-br from-indigo-500 via-violet-500 to-teal-400 shadow-md shadow-indigo-500/20 shrink-0">
             <div className="w-full h-full rounded-full overflow-hidden bg-white flex items-center justify-center">
               <img src="/logo.jpeg" alt="NexovTech Logo" className="w-full h-full object-cover" />
@@ -109,25 +109,26 @@ export const NexovChatbot: React.FC = () => {
             <span className="absolute bottom-0 right-0 w-3 h-3 rounded-full bg-emerald-500 border-2 border-white" />
           </div>
 
-          <div className="text-left">
-            <div className="flex items-center gap-1 text-[11px] sm:text-xs font-bold font-heading text-slate-900">
+          {/* Desktop Label (Hidden on Mobile for Compact Design) */}
+          <div className="hidden sm:block text-left pr-1">
+            <div className="flex items-center gap-1 text-xs font-bold font-heading text-slate-900">
               <span>NexovTech AI</span>
             </div>
-            <div className="text-[9px] sm:text-[10px] font-mono text-emerald-600 font-semibold">Online · Ask Anything</div>
+            <div className="text-[10px] font-mono text-emerald-600 font-semibold">Online · Ask Anything</div>
           </div>
         </button>
       )}
 
-      {/* ── Chat Window ─────────────────────────────────────────────────── */}
+      {/* ── Compact Chat Window ─────────────────────────────────────────── */}
       {isOpen && (
         <div
-          className="fixed inset-x-3 bottom-3 sm:left-auto sm:right-6 sm:bottom-6 z-[6000] sm:w-[400px] h-[78vh] sm:h-[520px] rounded-3xl bg-white border border-slate-200 shadow-2xl shadow-indigo-500/20 flex flex-col overflow-hidden animate-in zoom-in-95 slide-in-from-bottom-5 duration-300"
+          className="fixed inset-x-3 bottom-3 sm:left-auto sm:right-6 sm:bottom-6 z-[6000] sm:w-[380px] h-[440px] sm:h-[500px] max-h-[80vh] rounded-3xl bg-white border border-slate-200 shadow-2xl shadow-indigo-500/20 flex flex-col overflow-hidden animate-in zoom-in-95 slide-in-from-bottom-5 duration-300"
         >
-          {/* Header */}
-          <div className="p-4 bg-gradient-to-r from-slate-900 via-slate-800 to-indigo-950 text-white flex items-center justify-between border-b border-slate-800">
-            <div className="flex items-center gap-3">
+          {/* Compact Header */}
+          <div className="p-3 sm:p-4 bg-gradient-to-r from-slate-900 via-slate-800 to-indigo-950 text-white flex items-center justify-between border-b border-slate-800">
+            <div className="flex items-center gap-2.5">
               {/* Logo Frame */}
-              <div className="w-9 h-9 rounded-xl p-0.5 bg-gradient-to-br from-indigo-400 to-teal-400 shadow-sm shrink-0">
+              <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl p-0.5 bg-gradient-to-br from-indigo-400 to-teal-400 shadow-sm shrink-0">
                 <div className="w-full h-full rounded-[10px] overflow-hidden bg-white">
                   <img src="/logo.jpeg" alt="NexovTech Logo" className="w-full h-full object-cover" />
                 </div>
@@ -135,14 +136,14 @@ export const NexovChatbot: React.FC = () => {
 
               <div>
                 <div className="flex items-center gap-1.5">
-                  <h3 className="font-heading font-bold text-sm tracking-wide">NexovTech AI</h3>
-                  <span className="text-[9px] font-mono px-1.5 py-0.5 rounded bg-indigo-500/30 text-indigo-300 border border-indigo-400/30">
+                  <h3 className="font-heading font-bold text-xs sm:text-sm tracking-wide">NexovTech AI</h3>
+                  <span className="text-[8px] font-mono px-1.5 py-0.5 rounded bg-indigo-500/30 text-indigo-300 border border-indigo-400/30">
                     STUDIO
                   </span>
                 </div>
-                <div className="flex items-center gap-1.5 text-[10px] text-emerald-400 font-mono">
+                <div className="flex items-center gap-1.5 text-[9px] sm:text-[10px] text-emerald-400 font-mono">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                  <span>Available to assist</span>
+                  <span>Online · Available to assist</span>
                 </div>
               </div>
             </div>
@@ -151,25 +152,25 @@ export const NexovChatbot: React.FC = () => {
               onClick={() => setIsOpen(false)}
               className="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-white/10 transition-colors"
             >
-              <X className="w-5 h-5" />
+              <X className="w-4 h-4 sm:w-5 sm:h-5" />
             </button>
           </div>
 
           {/* Messages Body */}
-          <div className="flex-1 p-4 overflow-y-auto space-y-3.5 bg-slate-50/50">
+          <div className="flex-1 p-3 sm:p-4 overflow-y-auto space-y-3 bg-slate-50/50">
             {messages.map(msg => (
               <div
                 key={msg.id}
-                className={`flex gap-2.5 ${msg.sender === 'user' ? 'justify-end' : 'justify-start'}`}
+                className={`flex gap-2 ${msg.sender === 'user' ? 'justify-end' : 'justify-start'}`}
               >
                 {msg.sender === 'ai' && (
-                  <div className="w-7 h-7 rounded-lg overflow-hidden shrink-0 border border-indigo-200 shadow-sm mt-0.5">
+                  <div className="w-6 h-6 rounded-lg overflow-hidden shrink-0 border border-indigo-200 shadow-sm mt-0.5">
                     <img src="/logo.jpeg" alt="AI" className="w-full h-full object-cover" />
                   </div>
                 )}
 
                 <div
-                  className={`max-w-[80%] rounded-2xl p-3 text-xs leading-relaxed ${
+                  className={`max-w-[85%] rounded-2xl p-2.5 sm:p-3 text-[11px] sm:text-xs leading-relaxed ${
                     msg.sender === 'user'
                       ? 'bg-indigo-600 text-white rounded-br-none shadow-md shadow-indigo-500/10 font-medium'
                       : 'bg-white border border-slate-200 text-slate-800 rounded-bl-none shadow-sm'
@@ -177,7 +178,7 @@ export const NexovChatbot: React.FC = () => {
                 >
                   {msg.text}
                   <div
-                    className={`text-[9px] font-mono mt-1 text-right ${
+                    className={`text-[8px] sm:text-[9px] font-mono mt-1 text-right ${
                       msg.sender === 'user' ? 'text-indigo-200' : 'text-slate-400'
                     }`}
                   >
@@ -188,13 +189,13 @@ export const NexovChatbot: React.FC = () => {
             ))}
 
             {isTyping && (
-              <div className="flex gap-2.5 justify-start items-center">
-                <div className="w-7 h-7 rounded-lg overflow-hidden shrink-0 border border-indigo-200 shadow-sm">
+              <div className="flex gap-2 justify-start items-center">
+                <div className="w-6 h-6 rounded-lg overflow-hidden shrink-0 border border-indigo-200 shadow-sm">
                   <img src="/logo.jpeg" alt="AI" className="w-full h-full object-cover" />
                 </div>
-                <div className="bg-white border border-slate-200 rounded-2xl p-3 text-xs text-slate-400 flex items-center gap-1.5">
+                <div className="bg-white border border-slate-200 rounded-2xl p-2.5 text-xs text-slate-400 flex items-center gap-1.5">
                   <Bot className="w-3.5 h-3.5 text-indigo-600 animate-pulse" />
-                  <span>NexovTech AI is thinking...</span>
+                  <span className="text-[11px]">Thinking...</span>
                 </div>
               </div>
             )}
@@ -203,12 +204,12 @@ export const NexovChatbot: React.FC = () => {
 
           {/* Suggestions Chips */}
           {messages.length < 3 && (
-            <div className="px-3 pt-2 pb-1 bg-white border-t border-slate-100 flex flex-wrap gap-1.5">
+            <div className="px-2.5 pt-2 pb-1 bg-white border-t border-slate-100 flex flex-wrap gap-1">
               {SUGGESTIONS.map((sug, i) => (
                 <button
                   key={i}
                   onClick={() => handleSend(sug)}
-                  className="text-[10px] font-medium px-2.5 py-1 rounded-full bg-indigo-50 text-indigo-700 border border-indigo-100 hover:bg-indigo-100 transition-colors"
+                  className="text-[9px] font-medium px-2 py-1 rounded-full bg-indigo-50 text-indigo-700 border border-indigo-100 hover:bg-indigo-100 transition-colors"
                 >
                   {sug}
                 </button>
@@ -216,24 +217,24 @@ export const NexovChatbot: React.FC = () => {
             </div>
           )}
 
-          {/* Input Bar */}
+          {/* Compact Input Bar */}
           <form
             onSubmit={(e) => { e.preventDefault(); handleSend(); }}
-            className="p-3 bg-white border-t border-slate-200 flex items-center gap-2"
+            className="p-2.5 bg-white border-t border-slate-200 flex items-center gap-2"
           >
             <input
               type="text"
-              placeholder="Ask about services, timeline, pricing..."
+              placeholder="Ask anything..."
               value={input}
               onChange={e => setInput(e.target.value)}
-              className="flex-1 px-3.5 py-2 bg-slate-50 border border-slate-200 rounded-xl text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-indigo-600 focus:bg-white transition-colors"
+              className="flex-1 px-3 py-1.5 bg-slate-50 border border-slate-200 rounded-xl text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-indigo-600 focus:bg-white transition-colors"
             />
             <button
               type="submit"
               disabled={!input.trim()}
               className="p-2 rounded-xl bg-indigo-600 text-white disabled:opacity-40 disabled:cursor-not-allowed hover:bg-slate-900 transition-colors shadow-md shadow-indigo-500/20"
             >
-              <Send className="w-4 h-4" />
+              <Send className="w-3.5 h-3.5" />
             </button>
           </form>
         </div>
