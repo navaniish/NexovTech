@@ -4,6 +4,20 @@ export const PeacockBackground: React.FC = () => {
   return (
     <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden" style={{ background: '#fafafc' }}>
 
+      {/* ── Company Architecture Office Background Image Overlay ─────────── */}
+      <div
+        className="absolute inset-0 pointer-events-none opacity-[0.07] mix-blend-multiply transition-opacity duration-1000"
+        style={{
+          backgroundImage: 'url("/office.png")',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center top',
+          backgroundRepeat: 'no-repeat',
+          filter: 'contrast(1.1) saturate(0.9)',
+          maskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 40%, rgba(0,0,0,0.3) 80%, rgba(0,0,0,0) 100%)',
+          WebkitMaskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 40%, rgba(0,0,0,0.3) 80%, rgba(0,0,0,0) 100%)',
+        }}
+      />
+
       {/* ── Peacock Luminous Aurora Blurs ────────────────────────────────── */}
       
       {/* 1. Deep Royal Sapphire & Peacock Teal Main Feather Hub (Top-Center) */}
@@ -84,7 +98,7 @@ export const PeacockBackground: React.FC = () => {
         }}
       />
 
-      {/* ── Fluid Organic Peacock Wave Linework SVG (No Grid!) ──────────── */}
+      {/* ── Fluid Organic Peacock Wave Linework SVG ──────────── */}
       <svg
         className="absolute inset-0 w-full h-full opacity-[0.22] pointer-events-none"
         xmlns="http://www.w3.org/2000/svg"
@@ -92,42 +106,36 @@ export const PeacockBackground: React.FC = () => {
         preserveAspectRatio="none"
       >
         <defs>
-          {/* Peacock Feather Gradient 1: Teal to Sapphire */}
           <linearGradient id="peacockGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
             <stop offset="0%" stopColor="#0d9488" stopOpacity="0.8" />
             <stop offset="50%" stopColor="#2563eb" stopOpacity="0.6" />
             <stop offset="100%" stopColor="#7c3aed" stopOpacity="0.3" />
           </linearGradient>
 
-          {/* Peacock Feather Gradient 2: Emerald to Cyan */}
           <linearGradient id="peacockGrad2" x1="100%" y1="0%" x2="0%" y2="100%">
             <stop offset="0%" stopColor="#10b981" stopOpacity="0.7" />
             <stop offset="60%" stopColor="#06b6d4" stopOpacity="0.5" />
             <stop offset="100%" stopColor="#3b82f6" stopOpacity="0.2" />
           </linearGradient>
 
-          {/* Gold Sparkle Gradient */}
           <linearGradient id="goldGrad" x1="0%" y1="100%" x2="100%" y2="0%">
             <stop offset="0%" stopColor="#f59e0b" stopOpacity="0.6" />
             <stop offset="100%" stopColor="#ec4899" stopOpacity="0.2" />
           </linearGradient>
         </defs>
 
-        {/* Layer 1: Sweeping Peacock Plume Wave Top-Right */}
         <path
           d="M300,-50 C650,150 950,50 1480,220 C1480,450 1200,600 850,420 C500,240 250,500 -100,320 Z"
           fill="url(#peacockGrad1)"
           style={{ filter: 'blur(35px)' }}
         />
 
-        {/* Layer 2: Iridescent Emerald Feather Curve Mid-Left */}
         <path
           d="M-100,450 C350,300 700,650 1100,500 C1450,370 1550,750 1250,900 C950,1050 400,800 -100,750 Z"
           fill="url(#peacockGrad2)"
           style={{ filter: 'blur(45px)' }}
         />
 
-        {/* Layer 3: Soft Golden Crown Accent Wave */}
         <path
           d="M500,700 C900,600 1200,850 1550,750 C1550,1050 1100,1250 700,1100 C300,950 100,1150 -100,1050 Z"
           fill="url(#goldGrad)"
