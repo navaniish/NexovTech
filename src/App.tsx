@@ -11,6 +11,7 @@ import { LabsSection } from './components/LabsSection';
 import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
 import { PeacockBackground } from './components/PeacockBackground';
+import { NexovChatbot } from './components/NexovChatbot';
 
 export function App() {
   const [activeSection, setActiveSection] = useState('hero');
@@ -68,6 +69,7 @@ export function App() {
           <ContactSection />
         </main>
         <Footer onNavigate={scrollToSection} />
+        <NexovChatbot />
       </div>
     </div>
   );
