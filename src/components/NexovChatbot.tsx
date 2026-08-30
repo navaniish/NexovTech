@@ -98,10 +98,10 @@ export const NexovChatbot: React.FC = () => {
       {!isOpen && (
         <button
           onClick={() => setIsOpen(true)}
-          className="fixed bottom-6 right-6 z-[6000] group flex items-center gap-3 p-1.5 pr-4 rounded-full bg-white border border-slate-200 shadow-2xl shadow-indigo-500/25 hover:scale-105 transition-all duration-300 focus:outline-none"
+          className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-[6000] group flex items-center gap-2.5 p-1.5 pr-3.5 sm:pr-4 rounded-full bg-white border border-slate-200 shadow-2xl shadow-indigo-500/25 hover:scale-105 transition-all duration-300 focus:outline-none"
         >
           {/* Logo Frame */}
-          <div className="relative w-11 h-11 rounded-full p-0.5 bg-gradient-to-br from-indigo-500 via-violet-500 to-teal-400 shadow-md shadow-indigo-500/20 shrink-0">
+          <div className="relative w-10 h-10 sm:w-11 sm:h-11 rounded-full p-0.5 bg-gradient-to-br from-indigo-500 via-violet-500 to-teal-400 shadow-md shadow-indigo-500/20 shrink-0">
             <div className="w-full h-full rounded-full overflow-hidden bg-white flex items-center justify-center">
               <img src="/logo.jpeg" alt="NexovTech Logo" className="w-full h-full object-cover" />
             </div>
@@ -110,10 +110,10 @@ export const NexovChatbot: React.FC = () => {
           </div>
 
           <div className="text-left">
-            <div className="flex items-center gap-1 text-xs font-bold font-heading text-slate-900">
+            <div className="flex items-center gap-1 text-[11px] sm:text-xs font-bold font-heading text-slate-900">
               <span>NexovTech AI</span>
             </div>
-            <div className="text-[10px] font-mono text-emerald-600 font-semibold">Online · Ask Anything</div>
+            <div className="text-[9px] sm:text-[10px] font-mono text-emerald-600 font-semibold">Online · Ask Anything</div>
           </div>
         </button>
       )}
@@ -121,7 +121,7 @@ export const NexovChatbot: React.FC = () => {
       {/* ── Chat Window ─────────────────────────────────────────────────── */}
       {isOpen && (
         <div
-          className="fixed bottom-6 right-6 z-[6000] w-[calc(100vw-3rem)] sm:w-[400px] h-[520px] rounded-3xl bg-white border border-slate-200 shadow-2xl shadow-indigo-500/20 flex flex-col overflow-hidden animate-in zoom-in-95 slide-in-from-bottom-5 duration-300"
+          className="fixed inset-x-3 bottom-3 sm:left-auto sm:right-6 sm:bottom-6 z-[6000] sm:w-[400px] h-[78vh] sm:h-[520px] rounded-3xl bg-white border border-slate-200 shadow-2xl shadow-indigo-500/20 flex flex-col overflow-hidden animate-in zoom-in-95 slide-in-from-bottom-5 duration-300"
         >
           {/* Header */}
           <div className="p-4 bg-gradient-to-r from-slate-900 via-slate-800 to-indigo-950 text-white flex items-center justify-between border-b border-slate-800">
