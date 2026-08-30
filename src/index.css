@@ -298,6 +298,32 @@
 /* ── Focus ─────────────────────────────────────────────────── */
 :focus-visible {
   outline: 2px solid #4f46e5;
-  outline-offset: 3px;
-  border-radius: 6px;
+  outline-offset: 2px;
+}
+
+/* ── Mobile Responsiveness & Touch Utilities ───────────────── */
+@media (max-width: 640px) {
+  h1 {
+    font-size: 2.125rem !important;
+    line-height: 1.15 !important;
+    letter-spacing: -0.03em !important;
+  }
+
+  h2 {
+    font-size: 1.625rem !important;
+    line-height: 1.2 !important;
+    letter-spacing: -0.025em !important;
+  }
+
+  .btn-primary, .btn-ghost {
+    padding: 12px 20px !important;
+    font-size: 11px !important;
+    border-radius: 12px !important;
+  }
+
+  /* Prevent text clip & horizontal scroll on small devices */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
 }
