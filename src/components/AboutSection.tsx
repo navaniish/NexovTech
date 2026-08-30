@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { COMPANY_VALUES, TIMELINE_DATA } from '../data/portfolioData';
 import {
   ShieldCheck, Compass, Code2, Feather, Target, Lightbulb,
-  Users, Globe, Zap, ArrowRight, CheckCircle2
+  Users, Globe, Zap, ArrowRight, CheckCircle2, Search, Palette, Rocket, TrendingUp
 } from 'lucide-react';
 
 /* Value colour + icon identity */
@@ -33,6 +33,14 @@ const valueMeta: Record<string, { color: string; bg: string; border: string; ico
   },
 };
 
+const PROCESS_STEPS = [
+  { step: '01', title: 'Discover', desc: 'Roadmap & Scoping', color: '#0ea5e9', bg: 'rgba(14,165,233,0.08)', border: 'rgba(14,165,233,0.25)', icon: <Search className="w-3.5 h-3.5" /> },
+  { step: '02', title: 'Design', desc: 'UI/UX & Prototypes', color: '#7c3aed', bg: 'rgba(124,58,237,0.08)', border: 'rgba(124,58,237,0.25)', icon: <Palette className="w-3.5 h-3.5" /> },
+  { step: '03', title: 'Build', desc: 'Full-Stack & AI', color: '#4f46e5', bg: 'rgba(79,70,229,0.12)', border: 'rgba(79,70,229,0.3)', icon: <Code2 className="w-3.5 h-3.5" /> },
+  { step: '04', title: 'Launch', desc: 'Cloud Deployment', color: '#ec4899', bg: 'rgba(236,72,153,0.08)', border: 'rgba(236,72,153,0.25)', icon: <Rocket className="w-3.5 h-3.5" /> },
+  { step: '05', title: 'Scale', desc: '24/7 SLA Uptime', color: '#10b981', bg: 'rgba(16,185,129,0.08)', border: 'rgba(16,185,129,0.25)', icon: <TrendingUp className="w-3.5 h-3.5" /> },
+];
+
 const timelineStatusStyle = (status: string) => {
   if (status === 'Completed')  return { color: '#10b981', bg: 'rgba(16,185,129,0.08)',  border: 'rgba(16,185,129,0.2)' };
   if (status === 'Current')    return { color: '#4f46e5', bg: 'rgba(79,70,229,0.08)',   border: 'rgba(79,70,229,0.2)' };
@@ -41,6 +49,7 @@ const timelineStatusStyle = (status: string) => {
 
 export const AboutSection: React.FC = () => {
   const [hoveredValue, setHoveredValue] = useState<string | null>(null);
+  const [activeStep, setActiveStep] = useState<number | null>(null);
 
   return (
     <section id="about" className="py-16 sm:py-24 px-4 sm:px-6 md:px-8 max-w-7xl mx-auto">
@@ -78,25 +87,57 @@ export const AboutSection: React.FC = () => {
               NexovTech is an engineering studio dedicated to crafting digital software beyond the ordinary — web products and practical AI systems designed to endure, scale, and deliver lasting value for ambitious teams worldwide.
             </p>
 
-            {/* Process pills */}
-            <div className="flex flex-wrap items-center gap-2 font-mono text-xs">
-              {['Discover', 'Design', 'Build', 'Launch', 'Scale'].map((step, i, arr) => (
-                <React.Fragment key={step}>
-                  <span
-                    className="px-2.5 py-1 sm:px-3.5 sm:py-1.5 rounded-xl font-semibold text-[11px] sm:text-xs"
-                    style={
-                      step === 'Build'
-                        ? { background: 'linear-gradient(135deg,#4f46e5,#7c3aed)', color: '#fff', fontWeight: 700 }
-                        : { background: 'rgba(255,255,255,0.7)', color: '#64748b', border: '1px solid rgba(99,102,241,0.15)' }
-                    }
-                  >
-                    {step}
-                  </span>
-                  {i < arr.length - 1 && (
-                    <ArrowRight className="w-3 h-3 shrink-0" style={{ color: '#cbd5e1' }} />
-                  )}
-                </React.Fragment>
-              ))}
+            {/* ── Beautiful 5-Step Process Pipeline ──────────────────────── */}
+            <div>
+              <div className="text-[10px] font-mono font-bold text-slate-400 uppercase tracking-widest mb-3 flex items-center gap-1.5">
+                <span>OUR 5-STEP EXECUTION PIPELINE</span>
+              </div>
+
+              <div className="flex flex-wrap items-center gap-2 sm:gap-2.5">
+                {PROCESS_STEPS.map((item, idx) => {
+                  const isActive = activeStep === idx || item.title === 'Build';
+                  return (
+                    <React.Fragment key={item.step}>
+                      <div
+                        onMouseEnter={() => setActiveStep(idx)}
+                        onMouseLeave={() => setActiveStep(null)}
+                        className="group relative flex items-center gap-2 px-3 py-2 sm:px-3.5 sm:py-2 rounded-2xl cursor-pointer transition-all duration-300 shadow-sm"
+                        style={{
+                          background: isActive ? '#ffffff' : 'rgba(255,255,255,0.75)',
+                          border: `1.5px solid ${isActive ? item.color : 'rgba(226,232,240,0.8)'}`,
+                          boxShadow: isActive ? `0 4px 16px ${item.bg}` : '0 1px 3px rgba(15,23,42,0.03)',
+                          transform: isActive ? 'translateY(-2px)' : 'none',
+                        }}
+                      >
+                        {/* Icon circle */}
+                        <div
+                          className="w-6 h-6 rounded-lg flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:scale-110"
+                          style={{ background: item.bg, border: `1px solid ${item.border}`, color: item.color }}
+                        >
+                          {item.icon}
+                        </div>
+
+                        {/* Title & Step */}
+                        <div>
+                          <div className="flex items-center gap-1">
+                            <span className="text-[9px] font-mono font-bold text-slate-400">{item.step}.</span>
+                            <span className="text-xs font-heading font-bold text-slate-900 group-hover:text-indigo-600 transition-colors">
+                              {item.title}
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Arrow Connector */}
+                      {idx < PROCESS_STEPS.length - 1 && (
+                        <div className="shrink-0 text-slate-300 hidden sm:block">
+                          <ArrowRight className="w-3.5 h-3.5" />
+                        </div>
+                      )}
+                    </React.Fragment>
+                  );
+                })}
+              </div>
             </div>
           </div>
 
