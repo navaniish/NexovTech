@@ -6,8 +6,8 @@
 
 @layer base {
   :root {
-    --font-heading: 'Space Grotesk', system-ui, sans-serif;
-    --font-body:    'Inter', system-ui, sans-serif;
+    --font-heading: 'Plus Jakarta Sans', 'Space Grotesk', system-ui, -apple-system, sans-serif;
+    --font-body:    'Inter', system-ui, -apple-system, sans-serif;
     --font-mono:    'JetBrains Mono', 'Fira Code', monospace;
 
     /* Light Canvas */
@@ -35,7 +35,10 @@
 
   * { box-sizing: border-box; }
 
-  html { scroll-behavior: smooth; }
+  html {
+    scroll-behavior: smooth;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
 
   body {
     font-family: var(--font-body);
@@ -43,11 +46,15 @@
     color: var(--text-primary);
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
   }
 
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading);
-    letter-spacing: -0.025em;
+    letter-spacing: -0.032em;
+    line-height: 1.15;
+    font-weight: 700;
   }
 
   ::selection {
