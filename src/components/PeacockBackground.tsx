@@ -2,19 +2,25 @@ import React from 'react';
 
 export const PeacockBackground: React.FC = () => {
   return (
-    <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden" style={{ background: '#fafafc' }}>
+    <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden" style={{ background: '#f8fafc' }}>
 
-      {/* ── Company Architecture Office Background Image Overlay ─────────── */}
+      {/* ── Prominent Company Office Background Image ───────────────────────── */}
       <div
-        className="absolute inset-0 pointer-events-none opacity-[0.07] mix-blend-multiply transition-opacity duration-1000"
+        className="absolute inset-0 pointer-events-none opacity-[0.25] transition-opacity duration-1000"
         style={{
           backgroundImage: 'url("/office.png")',
           backgroundSize: 'cover',
-          backgroundPosition: 'center top',
+          backgroundPosition: 'center center',
           backgroundRepeat: 'no-repeat',
-          filter: 'contrast(1.1) saturate(0.9)',
-          maskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 40%, rgba(0,0,0,0.3) 80%, rgba(0,0,0,0) 100%)',
-          WebkitMaskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 40%, rgba(0,0,0,0.3) 80%, rgba(0,0,0,0) 100%)',
+          filter: 'contrast(1.05) saturate(1.1) brightness(0.98)',
+        }}
+      />
+
+      {/* ── Soft Tint Overlay for Perfect Contrast ─────────────────────────── */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background: 'linear-gradient(to bottom, rgba(248,250,252,0.65) 0%, rgba(248,250,252,0.50) 50%, rgba(248,250,252,0.70) 100%)',
         }}
       />
 
@@ -30,9 +36,9 @@ export const PeacockBackground: React.FC = () => {
           width: '1100px',
           height: '750px',
           background: `
-            radial-gradient(ellipse 60% 50% at 50% 30%, rgba(13,148,136,0.12) 0%, transparent 70%),
-            radial-gradient(circle 450px at 35% 45%, rgba(37,99,235,0.10) 0%, transparent 65%),
-            radial-gradient(circle 400px at 65% 55%, rgba(124,58,237,0.08) 0%, transparent 65%)
+            radial-gradient(ellipse 60% 50% at 50% 30%, rgba(13,148,136,0.15) 0%, transparent 70%),
+            radial-gradient(circle 450px at 35% 45%, rgba(37,99,235,0.12) 0%, transparent 65%),
+            radial-gradient(circle 400px at 65% 55%, rgba(124,58,237,0.10) 0%, transparent 65%)
           `,
           filter: 'blur(60px)',
         }}
@@ -47,7 +53,7 @@ export const PeacockBackground: React.FC = () => {
           width: '800px',
           height: '800px',
           background: `
-            radial-gradient(circle at center, rgba(16,185,129,0.08) 0%, rgba(6,182,212,0.06) 40%, transparent 70%)
+            radial-gradient(circle at center, rgba(16,185,129,0.10) 0%, rgba(6,182,212,0.08) 40%, transparent 70%)
           `,
           filter: 'blur(80px)',
         }}
@@ -62,7 +68,7 @@ export const PeacockBackground: React.FC = () => {
           width: '850px',
           height: '850px',
           background: `
-            radial-gradient(circle at center, rgba(79,70,229,0.08) 0%, rgba(13,148,136,0.06) 45%, transparent 70%)
+            radial-gradient(circle at center, rgba(79,70,229,0.10) 0%, rgba(13,148,136,0.08) 45%, transparent 70%)
           `,
           filter: 'blur(90px)',
         }}
@@ -77,7 +83,7 @@ export const PeacockBackground: React.FC = () => {
           width: '750px',
           height: '750px',
           background: `
-            radial-gradient(circle at center, rgba(245,158,11,0.05) 0%, rgba(124,58,237,0.06) 45%, transparent 70%)
+            radial-gradient(circle at center, rgba(245,158,11,0.08) 0%, rgba(124,58,237,0.08) 45%, transparent 70%)
           `,
           filter: 'blur(85px)',
         }}
@@ -92,7 +98,7 @@ export const PeacockBackground: React.FC = () => {
           width: '900px',
           height: '700px',
           background: `
-            radial-gradient(ellipse at center, rgba(13,148,136,0.09) 0%, rgba(37,99,235,0.06) 50%, transparent 75%)
+            radial-gradient(ellipse at center, rgba(13,148,136,0.12) 0%, rgba(37,99,235,0.08) 50%, transparent 75%)
           `,
           filter: 'blur(80px)',
         }}
@@ -100,7 +106,7 @@ export const PeacockBackground: React.FC = () => {
 
       {/* ── Fluid Organic Peacock Wave Linework SVG ──────────── */}
       <svg
-        className="absolute inset-0 w-full h-full opacity-[0.22] pointer-events-none"
+        className="absolute inset-0 w-full h-full opacity-[0.25] pointer-events-none"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 1440 1200"
         preserveAspectRatio="none"
