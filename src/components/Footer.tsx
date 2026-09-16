@@ -24,11 +24,11 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => (
     <div className="max-w-7xl mx-auto">
 
       {/* ── Brand Banner Showcase (Coverly) ───────────────────── */}
-      <div className="mb-12 rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg border border-slate-200/80 bg-slate-900 group transition-all duration-300 hover:shadow-indigo-500/10">
+      <div className="mb-10 sm:mb-12 rounded-2xl sm:rounded-3xl overflow-hidden bg-white border border-slate-200/90 shadow-sm sm:shadow-md transition-all duration-300 hover:shadow-indigo-500/10">
         <img
           src="/coverly.jpeg"
           alt="NexovTech - People Power A Brighter Tomorrow"
-          className="w-full h-auto block object-contain transition-transform duration-700 group-hover:scale-[1.01]"
+          className="w-full h-auto block object-cover sm:object-contain bg-white"
         />
       </div>
 
