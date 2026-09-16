@@ -18,19 +18,19 @@ const NAV_LINKS = [
 
 export const Footer: React.FC<FooterProps> = ({ onNavigate }) => (
   <footer
-    className="border-t pt-16 pb-10 px-4 md:px-8"
+    className="border-t pt-0 pb-10"
     style={{ background: '#f8fafc', borderColor: '#e2e8f0' }}
   >
-    <div className="max-w-7xl mx-auto">
+    {/* ── Full Wide Length Banner Showcase (Coverly) ───────────────────── */}
+    <div className="w-full overflow-hidden bg-white border-b border-slate-200/80 mb-12 shadow-sm">
+      <img
+        src="/coverly.jpeg"
+        alt="NexovTech - People Power A Brighter Tomorrow"
+        className="w-full h-auto block object-cover"
+      />
+    </div>
 
-      {/* ── Brand Banner Showcase (Coverly) ───────────────────── */}
-      <div className="mb-10 sm:mb-12 rounded-2xl sm:rounded-3xl overflow-hidden bg-white border border-slate-200/90 shadow-sm sm:shadow-md transition-all duration-300 hover:shadow-indigo-500/10">
-        <img
-          src="/coverly.jpeg"
-          alt="NexovTech - People Power A Brighter Tomorrow"
-          className="w-full h-auto block object-cover sm:object-contain bg-white"
-        />
-      </div>
+    <div className="max-w-7xl mx-auto px-4 md:px-8">
 
       {/* Main grid */}
       <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12" style={{ borderBottom: '1px solid #f1f5f9' }}>
